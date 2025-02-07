@@ -6,7 +6,7 @@ on:
 env:
   PROJECT_ID: sharky-enterprises-450214
   REGION: us-central1
-  GAR_LOCATION: us-central1-docker.pkg.dev/sharky-enterprises-450214/app-1
+  GAR_LOCATION: us-central1-go.pkg.dev/sharky-enterprises-450214/app1
 
 jobs:
   build-push-artifact:
