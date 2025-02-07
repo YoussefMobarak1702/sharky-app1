@@ -6,7 +6,7 @@ on:
 env:
   PROJECT_ID: sharky-enterprises-450214
   REGION: us-central1
-  GAR_LOCATION: us-central1-docker.pkg.dev/sharky-enterprises-450214/app-1:latest
+  GAR_LOCATION: us-central1-docker.pkg.dev/sharky-enterprises-450214/app-1
 
 jobs:
   build-push-artifact:
@@ -31,7 +31,7 @@ jobs:
           gcloud auth configure-docker ${{ env.REGION }}-docker.pkg.dev --quiet
 
       - name: Build image
-        run: docker build . --file . --tag ${{ env.GAR_LOCATION }}
+        run: docker build . --file . --tag ${{ env.GAR_LOCATION }}:latest
         
 
       - name: Push image
