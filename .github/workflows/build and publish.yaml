@@ -1,7 +1,8 @@
-name: Build and Push to Artifact Registry
+name: 'Deploy to GAR'
 
 on:
   [workflow_dispatch]
+
 env:
   PROJECT_ID: sharky-enterprises-450214
   REGION: "us-central1"
