@@ -1,4 +1,8 @@
 name: Build and Push to Artifact Registry
+env:
+  PROJECT_ID: sharky-enterprises-450214
+  REGION: "us-central1"
+  GAR_LOCATION: "us-central1"-docker.pkg.dev/sharky-enterprises-450214/app-1/
 
 on:
   push:
@@ -6,10 +10,7 @@ on:
   pull_request:
     branches: ["main"]
 
-env:
-  PROJECT_ID: sharky-enterprises-450214
-  REGION: "us-central1"
-  GAR_LOCATION: "us-central1"-docker.pkg.dev/sharky-enterprises-450214/app-1/
+
 
 jobs:
   build-push-artifact:
