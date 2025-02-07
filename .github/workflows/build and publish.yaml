@@ -1,22 +1,17 @@
-name: Build and Push to Artifact Registry
-
+name: Build and Push 
 
 on:
-  push:
-    branches: ["main"]
-  pull_request:
-    branches: ["main"]
+  [workflow_dispatch]
 
-
+env:
+  PROJECT_ID: sharky-enterprises-450214
+  REGION: us-central1
+  GAR_LOCATION: "us-central1"-docker.pkg.dev/sharky-enterprises-450214/app-1/
 
 jobs:
   build-push-artifact:
     runs-on: ubuntu-latest
     steps:
-    env:
-      PROJECT_ID: sharky-enterprises-450214
-      REGION: "us-central1"
-      GAR_LOCATION: "us-central1"-docker.pkg.dev/sharky-enterprises-450214/app-1/  
       - name: "Checkout"
         uses: "actions/checkout@v3"
 
