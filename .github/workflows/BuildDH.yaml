@@ -1,4 +1,4 @@
-name: build & publish
+name: DHB&P
 
 on:
   [workflow_dispatch]
