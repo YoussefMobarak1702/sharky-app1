@@ -1,0 +1,20 @@
+name: build & publish
+
+on:
+  [workflow_dispatch]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: checkout
+      uses: actions/checkout@v4
+    - name: Build the Docker image
+      run: docker build . -t youssefmobarak/sharky-app1:latest
+    - name: Push image to dockerhub
+      run: |
+        docker login -u youssefmobarak -p ${{secrets.DKR_HUB}}
+        docker push youssefmobarak/sharky-app1:latest
